@@ -7,12 +7,14 @@ const port = process.env.PORT;
 mongoose.set("strictQuery", false);
 
 const authRouter = require("./routes/auth");
+const userRouter = require("./routes/user");
 
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/v1/api", authRouter);
+app.use("/auth", authRouter);
+app.use("/v1/api", userRouter);
 
 (async () => {
   const dbState = [
