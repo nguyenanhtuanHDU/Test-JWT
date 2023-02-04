@@ -8,9 +8,9 @@ mongoose.set("strictQuery", false);
 
 const authRouter = require("./routes/auth");
 
-app.use(express.json()); 
+app.use(express.json());
 
-app.use(express.urlencoded({ extended: true })); 
+app.use(express.urlencoded({ extended: true }));
 
 app.use("/v1/api", authRouter);
 
